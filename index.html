@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard - Current Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+            <p class="location" id="current-location">New York</p>
+            
+            <!-- Location Search -->
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="location-search" 
+                    class="search-input" 
+                    placeholder="Search for a city..." 
+                    autocomplete="off"
+                >
+                <button onclick="searchLocation()" class="search-btn">🔍 Search</button>
+            </div>
+            <div id="search-results" class="search-results hidden"></div>
+        </header>
+
+        <main>
+            <div class="weather-card">
+                <h2>Current Weather</h2>
+                
+                <div id="loading" class="loading">Loading weather data...</div>
+                
+                <div id="weather-content" class="weather-content hidden">
+                    <div class="weather-item">
+                        <span class="label">Temperature:</span>
+                        <span id="temperature" class="value">--°C</span>
+                    </div>
+                    
+                    <div class="weather-item">
+                        <span class="label">Wind Speed:</span>
+                        <span id="windspeed" class="value">-- km/h</span>
+                    </div>
+                    
+                    <div class="weather-item">
+                        <span class="label">Conditions:</span>
+                        <span id="conditions" class="value">--</span>
+                    </div>
+
+                    <div class="weather-item">
+                        <span class="label">Time:</span>
+                        <span id="time" class="value">--</span>
+                    </div>
+
+                    <div class="weather-item">
+                        <span class="label">Timezone:</span>
+                        <span id="timezone" class="value">--</span>
+                    </div>
+                </div>
+
+                <div id="error" class="error hidden"></div>
+            </div>
+
+            <div class="navigation">
+                <button onclick="window.location.href='forecast.html'" class="btn btn-primary">
+                    View 7-Day Forecast →
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Data provided by <a href="https://open-meteo.com/" target="_blank">Open-Meteo API</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Load current weather on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeLocation();
+            fetchCurrentWeather();
+        });
+
+        // Allow Enter key to trigger search
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('location-search').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    searchLocation();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

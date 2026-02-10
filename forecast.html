@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard - 7-Day Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+            <p class="location" id="current-location">New York</p>
+            
+            <!-- Location Search -->
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="location-search" 
+                    class="search-input" 
+                    placeholder="Search for a city..." 
+                    autocomplete="off"
+                >
+                <button onclick="searchLocation()" class="search-btn">Search</button>
+            </div>
+            <div id="search-results" class="search-results hidden"></div>
+        </header>
+
+        <main>
+            <div class="weather-card">
+                <h2>7-Day Forecast</h2>
+                
+                <div id="loading" class="loading">Loading forecast data...</div>
+                
+                <div id="forecast-content" class="forecast-content hidden">
+                    <!-- Forecast days will be displayed here -->
+                </div>
+
+                <div id="error" class="error hidden"></div>
+            </div>
+
+            <div class="navigation">
+                <button onclick="window.location.href='index.html'" class="btn btn-secondary">
+                    ← Back to Current Weather
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Data provided by <a href="https://open-meteo.com/" target="_blank">Open-Meteo API</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Load 7-day forecast on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeLocation();
+            fetch7DayForecast();
+        });
+
+        // Allow Enter key to trigger search
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('location-search').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    searchLocation();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
