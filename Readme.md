@@ -86,7 +86,7 @@ GET https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&curren
 **7-Day Forecast**
 
 * Date
-* Max Temp
-* Min Temp
+* Max Temperature
+* Min Temperature
 
 
