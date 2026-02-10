@@ -12,10 +12,10 @@ You can search for any city worldwide and it shows weather for that place.
 
 ## Files
 
-- `index.html` - current weather page
-- `forecast.html` - forecast page  
-- `style.css` - all the styling (dark theme)
-- `script.js` - all the JavaScript code
+- `index.html` 
+- `forecast.html` 
+- `style.css` 
+- `script.js`
 
 ## API Used
 
