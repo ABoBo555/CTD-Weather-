@@ -78,8 +78,6 @@ Displays:
 * Wind speed
 * Weather conditions
 
-Includes a button:
-➡ “View 7-Day Forecast”
 
 ---
 
