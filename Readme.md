@@ -72,25 +72,21 @@ https://geocoding-api.open-meteo.com/v1/search?name={city}&count=5
 GET https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true
 ```
 
-Displays:
+---
 
+## Displays:
+
+**Current Weather**
 * Temperature
 * Wind speed
 * Weather conditions
+* Time
+* Timezone
 
+**7-Day Forecast**
 
----
+* Date
+* Max Temp
+* Min Temp
 
-## 7-Day Forecast (forecast.html)
-
-**Endpoint:**
-
-```
-GET https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&daily=temperature_2m_max,temperature_2m_min&forecast_days=7
-```
-
-Displays:
-
-* Max temperature for next 7 days
-* Min temperature for next 7 days
 
