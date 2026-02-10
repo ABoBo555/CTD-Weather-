@@ -44,7 +44,7 @@ Open-Meteo Weather API - https://open-meteo.com/en/docs
 
 - HTML
 - CSS 
-- JavaScript (vanilla, no frameworks)
+- JavaScript (vanilla)
 - Open-Meteo API (weather data)
 - Open-Meteo Geocoding API (city search)
 
@@ -83,7 +83,7 @@ Includes a button:
 
 ---
 
-## 📆 7-Day Forecast (forecast.html)
+## 7-Day Forecast (forecast.html)
 
 **Endpoint:**
 
